@@ -12,7 +12,7 @@ export async function getAdminStats() {
     const paidAppointments = await prisma.appointment.findMany({
       where: { paymentStatus: 'PAID' }
     });
-    const revenue = paidAppointments.reduce((sum, app) => sum + app.amount, 0);
+    const revenue = paidAppointments.reduce((sum: number, app: any) => sum + app.amount, 0);
 
     const doctors = await prisma.doctor.findMany({
       include: {
@@ -72,7 +72,7 @@ export async function getAdminStats() {
     });
 
     // Top doctor by bookings
-    const topDoctor = doctors.reduce((top, d) => 
+    const topDoctor = doctors.reduce((top: any, d: any) => 
       d.appointments.length > (top?.appointments?.length || 0) ? d : top, doctors[0]);
 
     return {

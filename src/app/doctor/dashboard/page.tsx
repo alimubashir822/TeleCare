@@ -138,7 +138,7 @@ export default function DoctorDashboard() {
 
   // Stats
   const todayConsultationsCount = todayAppointments.length;
-  const totalEarnings = appointments.reduce((sum, app) => sum + (app.paymentStatus === 'PAID' ? app.amount : 0), 0);
+  const totalEarnings = appointments.reduce((sum: number, app: any) => sum + (app.paymentStatus === 'PAID' ? app.amount : 0), 0);
   const pendingRecordsCount = appointments.filter(app => app.status === 'CONFIRMED').length;
 
   const calculateAge = (dobString: string) => {

@@ -87,7 +87,7 @@ export default function AdminDashboard() {
 
   const maxRevenue = Math.max(...monthlyRevenue, 1);
   const maxConsults = Math.max(...monthlyConsultations, 1);
-  const totalSpecialties = Object.values(specialtyMap).reduce((a, b) => a + b, 0);
+  const totalSpecialties = Object.values(specialtyMap).reduce((a: number, b: number) => a + b, 0);
   const retentionRate = patientEngagement.length > 0 
     ? Math.round(patientEngagement.filter(p => p.score > 50).length / patientEngagement.length * 100) 
     : 82;
