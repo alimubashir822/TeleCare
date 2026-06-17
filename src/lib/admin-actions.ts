@@ -35,7 +35,7 @@ export async function getAdminStats() {
 
     // Build specialty distribution
     const specialtyMap: Record<string, number> = {};
-    doctors.forEach(d => {
+    doctors.forEach((d: any) => {
       specialtyMap[d.specialty] = (specialtyMap[d.specialty] || 0) + 1;
     });
 
