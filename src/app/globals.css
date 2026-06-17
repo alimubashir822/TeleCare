@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+:root {
+  --background: #030712; /* Slate 950 */
+  --foreground: #f3f4f6; /* Gray 100 */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  /* Medical Teal/Cyan palette */
+  --color-brand-light: #e0f2fe; /* Sky 100 */
+  --color-brand-300: #7dd3fc; /* Sky 300 */
+  --color-brand-400: #38bdf8; /* Sky 400 */
+  --color-brand-500: #0ea5e9; /* Sky 500 */
+  --color-brand-600: #0284c7; /* Sky 600 */
+  --color-brand-700: #0369a1; /* Sky 700 */
+  --color-brand-900: #0c4a6e; /* Sky 900 */
+  --color-brand-950: #082f49; /* Sky 950 */
+
+  /* Deep Royal Medical Blue */
+  --color-medical-500: #14b8a6; /* Teal 500 */
+  --color-medical-600: #0d9488; /* Teal 600 */
+  --color-medical-700: #0f766e; /* Teal 700 */
+  
+  --color-accent-emerald: #10b981; /* Emerald 500 */
+  --color-accent-amber: #f59e0b; /* Amber 500 */
+  
+  /* Font Override */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-teal {
+  background: rgba(13, 148, 136, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(13, 148, 136, 0.2);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(15, 23, 42, 0.65);
+  border-color: rgba(14, 165, 233, 0.3);
+  box-shadow: 0 0 25px rgba(14, 165, 233, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Text glow effects */
+.text-glow {
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
+
+.text-glow-emerald {
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(14, 165, 233, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(14, 165, 233, 0.5);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Pulse animation for active video/consultation */
+@keyframes soft-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+.pulse-active {
+  animation: soft-pulse 2s infinite ease-in-out;
+}
