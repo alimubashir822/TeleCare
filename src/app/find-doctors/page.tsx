@@ -212,8 +212,8 @@ function DoctorSearchInner() {
 
         // Filter and sort by matchScore desc
         const sorted = scored
-          .filter(d => d.matchScore > 65)
-          .sort((a, b) => b.matchScore - a.matchScore);
+          .filter((d: any) => d.matchScore > 65)
+          .sort((a: any, b: any) => b.matchScore - a.matchScore);
 
         setMatchingResults(sorted);
       }
